@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: ledgermesh-postgres
+    environment:
+      POSTGRES_USER: ledgermesh
+      POSTGRES_PASSWORD: ledgermesh
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./infra/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ledgermesh"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ledgermesh-net
+  redis:
+    image: redis:7
+    container_name: ledgermesh-redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ledgermesh-net
+volumes:
+  pgdata:
+
+networks:
+  ledgermesh-net:
+    driver : bridge
