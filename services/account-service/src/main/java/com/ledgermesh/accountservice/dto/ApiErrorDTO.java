@@ -1,6 +1,7 @@
 package com.ledgermesh.accountservice.dto;
 
-import jakarta.ws.rs.SeBootstrap.Instance;
+import java.time.Instant;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -8,7 +9,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class ApiErrorDTO {
     
-    private Instance timestamp;
+    private Instant timestamp;
     private int status;
     private String message;
     private String path;
