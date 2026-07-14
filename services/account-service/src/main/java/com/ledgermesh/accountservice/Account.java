@@ -29,31 +29,29 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-
-public class Account 
-{
+public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @Column(nullable = false)
     private UUID userId;
-    
+
     @Column(nullable = false)
     private String accountName;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private AccountType accountType;
 
-    @Column(nullable = false , precision = 19, scale = 2)
+    @Column(nullable = false, precision = 19, scale = 2)
     private BigDecimal balance;
 
-    @Column(nullable = false , length = 3)
+    @Column(nullable = false, length = 3)
     @Builder.Default
     private String currency = "EUR";
 
-    @Column(nullable = false , updatable = false)
+    @Column(nullable = false, updatable = false)
     private Instant createdAt;
 
     @Column(nullable = false)
@@ -69,5 +67,4 @@ public class Account
     protected void onUpdate() {
         updatedAt = Instant.now();
     }
-
 }

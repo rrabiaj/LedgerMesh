@@ -3,10 +3,11 @@ package com.ledgermesh.accountservice.dto;
 import java.math.BigDecimal;
 import java.util.UUID;
 
+import com.ledgermesh.accountservice.model.AccountType;
+
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 import jakarta.validation.constraints.Size;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,7 +16,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class AccountRequestDTO {
-    
+
     @NotNull(message = "User ID cannot be null")
     private UUID userId;
 
@@ -24,7 +25,7 @@ public class AccountRequestDTO {
     private String accountName;
 
     @NotNull(message = "Account type cannot be null")
-    private String accountType;
+    private AccountType accountType;
 
     @NotNull(message = "Balance cannot be null")
     @PositiveOrZero(message = "Balance must be zero or positive")
@@ -32,5 +33,4 @@ public class AccountRequestDTO {
 
     @Size(min = 3, max = 3, message = "Currency must be a 3-character code")
     private String currency;
-
 }
