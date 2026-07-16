@@ -1,3 +1,15 @@
 {
+<<<<<<< HEAD
     "java.compile.nullAnalysis.mode": "automatic"
+=======
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-25",
+            "path": "C:\\Users\\User\\.jdks\\openjdk-26.0.1",
+            "default": true
+        }
+    ]
+>>>>>>> dbf186162389f54ee54dd92d5a6e78cc0841646e
 }
