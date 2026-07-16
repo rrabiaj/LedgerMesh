@@ -1,0 +1,58 @@
+C:\Users\User\OneDrive\Desktop\LedgerMesh>mvnw.cmd clean
+'mvnw.cmd' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\User\OneDrive\Desktop\LedgerMesh>mvnw.cmd clean
+'mvnw.cmd' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\User\OneDrive\Desktop\LedgerMesh>git stash
+.vscode/settings.json: needs merge
+error: could not write index
+
+C:\Users\User\OneDrive\Desktop\LedgerMesh>git pull
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+C:\Users\User\OneDrive\Desktop\LedgerMesh>git stash pop
+.vscode/settings.json: needs merge
+error: could not write index
+The stash entry is kept in case you need it again.
+
+C:\Users\User\OneDrive\Desktop\LedgerMesh>cd services\account-service
+
+C:\Users\User\OneDrive\Desktop\LedgerMesh\services\account-service>mvnw.cmd clean install
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.ledgermesh:account-service >-------------------
+[INFO] Building account-service 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/3.4.1/maven-clean-plugin-3.4.1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/3.4.1/maven-clean-plugin-3.4.1.pom (5.6 kB at 9.6 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/3.5.3/maven-surefire-plugin-3.5.3.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/3.5.3/maven-surefire-plugin-3.5.3.pom (5.5 kB at 69 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire/3.5.3/surefire-3.5.3.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire/3.5.3/surefire-3.5.3.pom (20 kB at 163 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/3.1.4/maven-install-plugin-3.1.4.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/3.1.4/maven-install-plugin-3.1.4.pom (8.1 kB at 104 kB/s)
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ account-service ---
+[INFO] Deleting C:\Users\User\OneDrive\Desktop\LedgerMesh\services\account-service\target
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.923 s
+[INFO] Finished at: 2026-07-16T18:04:50+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-clean-plugin:3.4.1:clean (default-clean) on project account-service: Failed to clean project: Failed to delete C:\Users\User\OneDrive\Desktop\LedgerMesh\services\account-service\target\classes\com\ledgermesh\accountservice\controller -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+
+C:\Users\User\OneDrive\Desktop\LedgerMesh\services\account-service>
