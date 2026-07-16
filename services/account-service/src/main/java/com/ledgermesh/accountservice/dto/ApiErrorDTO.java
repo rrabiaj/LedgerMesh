@@ -2,7 +2,6 @@ package com.ledgermesh.accountservice.dto;
 
 import java.time.Instant;
 
-import org.springframework.http.HttpStatus;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
