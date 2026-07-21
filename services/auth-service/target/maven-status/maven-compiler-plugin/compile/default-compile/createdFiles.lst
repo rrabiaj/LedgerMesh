@@ -1,0 +1,8 @@
+com/ledgermesh/authservice/repository/UserRepository.class
+com/ledgermesh/authservice/dto/AuthResponseDTO.class
+com/ledgermesh/authservice/dto/LoginRequestDTO.class
+com/ledgermesh/authservice/security/JwtService.class
+com/ledgermesh/authservice/model/User.class
+com/ledgermesh/authservice/dto/RegisterRequestDTO.class
+com/ledgermesh/authservice/dto/AuthResponseDTO$AuthResponseDTOBuilder.class
+com/ledgermesh/authservice/model/User$UserBuilder.class

@@ -1,0 +1,6 @@
+/home/ubuntu/LedgerMesh/services/auth-service/src/main/java/com/ledgermesh/authservice/dto/AuthResponseDTO.java
+/home/ubuntu/LedgerMesh/services/auth-service/src/main/java/com/ledgermesh/authservice/dto/LoginRequestDTO.java
+/home/ubuntu/LedgerMesh/services/auth-service/src/main/java/com/ledgermesh/authservice/dto/RegisterRequestDTO.java
+/home/ubuntu/LedgerMesh/services/auth-service/src/main/java/com/ledgermesh/authservice/model/User.java
+/home/ubuntu/LedgerMesh/services/auth-service/src/main/java/com/ledgermesh/authservice/repository/UserRepository.java
+/home/ubuntu/LedgerMesh/services/auth-service/src/main/java/com/ledgermesh/authservice/security/JwtService.java

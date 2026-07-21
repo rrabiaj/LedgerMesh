@@ -1,5 +1,12 @@
-package main.java.com.ledgermesh.authservice.dto;
+package com.ledgermesh.authservice.dto;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @Setter
@@ -7,18 +14,18 @@ package main.java.com.ledgermesh.authservice.dto;
 @AllArgsConstructor
 public class RegisterRequestDTO {
 
-        @NotBlank(message = "Email is required")
-        @Email(message = "Email should be valid")
-        private String Email;
+    @NotBlank(message = "Email is required")
+    @Email(message = "Email should be valid")
+    private String email;
 
-        @NotBlank(message = "Password is required")
-        @Size(min = 8, message = "Password must be at least 8 characters long")
-        private String password;
+    @NotBlank(message = "Password is required")
+    @Size(min = 8, message = "Password must be at least 8 characters long")
+    private String password;
 
-        @NotBlank(message = "FirstName is required")
-        private String firstName;
+    @NotBlank(message = "FirstName is required")
+    private String firstName;
 
-        @NotBlank(message = "LastName is required")
-        private String lastName;
-        
+    @NotBlank(message = "LastName is required")
+    private String lastName;
+    
 }

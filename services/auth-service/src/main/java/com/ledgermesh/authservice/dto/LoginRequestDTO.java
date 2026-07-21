@@ -1,12 +1,18 @@
-package main.java.com.ledgermesh.authservice.dto;
+package com.ledgermesh.authservice.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsContrustor
+@AllArgsConstructor
 public class LoginRequestDTO {
     
-    @NotBlank(messsage = "Email is required")
+    @NotBlank(message = "Email is required")
     private String email;
 
     @NotBlank(message = "Password is required")
