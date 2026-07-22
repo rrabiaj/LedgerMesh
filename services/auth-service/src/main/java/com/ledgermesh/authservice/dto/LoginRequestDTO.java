@@ -1,7 +1,6 @@
 package com.ledgermesh.authservice.dto;
 
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
+@AllArgsContrustor
 public class LoginRequestDTO {
     
     @NotBlank(message = "Email is required")

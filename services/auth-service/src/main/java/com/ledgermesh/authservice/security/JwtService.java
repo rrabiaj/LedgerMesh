@@ -1,19 +1,18 @@
 package com.ledgermesh.authservice.security;
 
 import java.nio.charset.StandardCharsets;
-import java.security.Key;
 import java.util.Date;
 import java.util.function.Function;
 
 import javax.crypto.SecretKey;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
-import org.springframework.security.core.userdetails.UserDetails;
 
 @Service
 public class JwtService {
@@ -34,6 +33,7 @@ public class JwtService {
                    .compact();
     }
     
+    @SuppressWarnings("null")
     public String extractUsername(String token) 
     {
         return extractClaim(token , Claims::getSubject);
@@ -50,6 +50,7 @@ public class JwtService {
         return extractExpiration(token).before(new Date());
     }
 
+    @SuppressWarnings("null")
     private Date extractExpiration(String token)
     {
         return extractClaim(token, Claims::getExpiration);
@@ -64,19 +65,13 @@ public class JwtService {
     private Claims extractAllClaims(String token)
     {
         return Jwts.parser()
-                   .verifyWith(getSignInToken())
+                   .verifyWith(getSignInKey())
                    .build()
                    .parseSignedClaims(token)
                    .getPayload();
     }
 
     private SecretKey getSignInKey()
-    {
-        byte[] keyBytes = secretKey.getBytes(StandardCharsets.UTF_8);
-        return Keys.hmacShaKeyFor(keyBytes);
-    }
-
-    private SecretKey getSignInToken()
     {
         byte[] keyBytes = secretKey.getBytes(StandardCharsets.UTF_8);
         return Keys.hmacShaKeyFor(keyBytes);
