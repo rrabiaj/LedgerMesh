@@ -8,7 +8,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsContrustor
 public class LoginRequestDTO {
     
     @NotBlank(message = "Email is required")
