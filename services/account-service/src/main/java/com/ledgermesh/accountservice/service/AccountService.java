@@ -23,6 +23,7 @@ public class AccountService {
     private final AccountRepository accountRepository;
     private final AccountMapper accountMapper;
 
+    @SuppressWarnings("null")
     @Transactional
     public AccountResponseDTO createAccount(AccountRequestDTO request) {
         Account account = accountMapper.toEntity(request);
@@ -32,6 +33,7 @@ public class AccountService {
 
     @Transactional(readOnly = true)
     public AccountResponseDTO getAccountById(UUID id) {
+        @SuppressWarnings("null")
         Account account = accountRepository.findById(id)
                 .orElseThrow(() -> new AccountNotFoundException(id));
         return accountMapper.toResponse(account);
@@ -46,6 +48,7 @@ public class AccountService {
 
     @Transactional
     public AccountResponseDTO updateAccount(UUID id, AccountRequestDTO request) {
+        @SuppressWarnings("null")
         Account existing = accountRepository.findById(id)
                 .orElseThrow(() -> new AccountNotFoundException(id));
         existing.setAccountName(request.getAccountName());
@@ -58,6 +61,7 @@ public class AccountService {
         return accountMapper.toResponse(updated);
     }
 
+    @SuppressWarnings("null")
     @Transactional
     public void deleteAccount(UUID id) {
         if (!accountRepository.existsById(id)) {
