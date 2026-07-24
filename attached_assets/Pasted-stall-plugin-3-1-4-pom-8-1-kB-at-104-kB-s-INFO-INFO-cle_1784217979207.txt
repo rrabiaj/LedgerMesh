@@ -1,0 +1,66 @@
+stall-plugin-3.1.4.pom (8.1 kB at 104 kB/s)
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ account-service ---
+[INFO] Deleting C:\Users\User\OneDrive\Desktop\LedgerMesh\services\account-service\target
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.923 s
+[INFO] Finished at: 2026-07-16T18:04:50+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-clean-plugin:3.4.1:clean (default-clean) on project account-service: Failed to clean project: Failed to delete C:\Users\User\OneDrive\Desktop\LedgerMesh\services\account-service\target\classes\com\ledgermesh\accountservice\controller -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+
+C:\Users\User\OneDrive\Desktop\LedgerMesh\services\account-service># Keep the GitHub version (discard your local changes to that file):
+'#' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\User\OneDrive\Desktop\LedgerMesh\services\account-service>git checkout --theirs .vscode/settings.json
+error: pathspec '.vscode/settings.json' did not match any file(s) known to git
+
+C:\Users\User\OneDrive\Desktop\LedgerMesh\services\account-service>git add .vscode/settings.json
+warning: could not open directory 'services/account-service/.vscode/': No such file or directory
+fatal: pathspec '.vscode/settings.json' did not match any files
+
+C:\Users\User\OneDrive\Desktop\LedgerMesh\services\account-service>git commit -m "Resolve merge conflict in settings.json" 
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+C:\Users\User\OneDrive\Desktop\LedgerMesh\services\account-service>git pull
+Already up to date.
+
+C:\Users\User\OneDrive\Desktop\LedgerMesh\services\account-service>cd services\account-service
+The system cannot find the path specified.
+
+C:\Users\User\OneDrive\Desktop\LedgerMesh\services\account-service>mvnw.cmd clean install
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.ledgermesh:account-service >-------------------
+[INFO] Building account-service 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ account-service ---
+[INFO] Deleting C:\Users\User\OneDrive\Desktop\LedgerMesh\services\account-service\target
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.454 s
+[INFO] Finished at: 2026-07-16T18:06:09+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-clean-plugin:3.4.1:clean (default-clean) on project account-service: Failed to clean project: Failed to delete C:\Users\User\OneDrive\Desktop\LedgerMesh\services\account-service\target\classes\com\ledgermesh\accountservice\controller -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+
+C:\Users\User\OneDrive\Desktop\LedgerMesh\services\account-service>

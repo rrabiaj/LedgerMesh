@@ -1,0 +1,13 @@
+C:\Users\User\OneDrive\Desktop\LedgerMesh\services\auth-service\src\main\java\com\ledgermesh\authservice\AuthServiceApplication.java
+C:\Users\User\OneDrive\Desktop\LedgerMesh\services\auth-service\src\main\java\com\ledgermesh\authservice\config\SecurityConfig.java
+C:\Users\User\OneDrive\Desktop\LedgerMesh\services\auth-service\src\main\java\com\ledgermesh\authservice\controller\AuthController.java
+C:\Users\User\OneDrive\Desktop\LedgerMesh\services\auth-service\src\main\java\com\ledgermesh\authservice\dto\AuthResponseDTO.java
+C:\Users\User\OneDrive\Desktop\LedgerMesh\services\auth-service\src\main\java\com\ledgermesh\authservice\dto\LoginRequestDTO.java
+C:\Users\User\OneDrive\Desktop\LedgerMesh\services\auth-service\src\main\java\com\ledgermesh\authservice\dto\RegisterRequestDTO.java
+C:\Users\User\OneDrive\Desktop\LedgerMesh\services\auth-service\src\main\java\com\ledgermesh\authservice\model\Role.java
+C:\Users\User\OneDrive\Desktop\LedgerMesh\services\auth-service\src\main\java\com\ledgermesh\authservice\model\User.java
+C:\Users\User\OneDrive\Desktop\LedgerMesh\services\auth-service\src\main\java\com\ledgermesh\authservice\repository\UserRepository.java
+C:\Users\User\OneDrive\Desktop\LedgerMesh\services\auth-service\src\main\java\com\ledgermesh\authservice\security\JwtAuthenticationFilter.java
+C:\Users\User\OneDrive\Desktop\LedgerMesh\services\auth-service\src\main\java\com\ledgermesh\authservice\security\JwtService.java
+C:\Users\User\OneDrive\Desktop\LedgerMesh\services\auth-service\src\main\java\com\ledgermesh\authservice\security\UserDetailsServiceImpl.java
+C:\Users\User\OneDrive\Desktop\LedgerMesh\services\auth-service\src\main\java\com\ledgermesh\authservice\service\AuthService.java
