@@ -1,8 +1,13 @@
+com\ledgermesh\authservice\controller\AuthController.class
 com\ledgermesh\authservice\model\User.class
 com\ledgermesh\authservice\dto\AuthResponseDTO$AuthResponseDTOBuilder.class
 com\ledgermesh\authservice\dto\LoginRequestDTO.class
+com\ledgermesh\authservice\model\Role.class
+com\ledgermesh\authservice\security\JwtAuthenticationFilter.class
 com\ledgermesh\authservice\dto\RegisterRequestDTO.class
 com\ledgermesh\authservice\repository\UserRepository.class
+com\ledgermesh\authservice\security\UserDetailsServiceImpl.class
 com\ledgermesh\authservice\dto\AuthResponseDTO.class
+com\ledgermesh\authservice\service\AuthService.class
 com\ledgermesh\authservice\model\User$UserBuilder.class
 com\ledgermesh\authservice\security\JwtService.class
