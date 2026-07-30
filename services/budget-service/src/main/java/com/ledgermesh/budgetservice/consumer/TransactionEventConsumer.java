@@ -1,20 +1,47 @@
 package com.ledgermesh.budgetservice.consumer;
 
 import com.ledgermesh.budgetservice.event.TransactionCreatedEvent;
-import lombok.extern.slf4j.Slf4j;
+import com.ledgermesh.budgetservice.service.BudgetService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
 @Component
-@Slf4j
 public class TransactionEventConsumer {
 
-    @KafkaListener(topics = "transaction-events", groupId = "budget-service-group")
+    private static final Logger logger =
+            LoggerFactory.getLogger(TransactionEventConsumer.class);
 
-    public void consumeTransactionCreatedEvent(TransactionCreatedEvent event){
-        
-        log.info("Received TransactionCreatedEvent: {}", event);
-        
-        log.info("Evaluating budget for userId={} , category={} and amount={} ", event.getUserId(), event.getCategory(), event.getAmount());
+    private final BudgetService budgetService;
+
+    public TransactionEventConsumer(BudgetService budgetService) {
+        this.budgetService = budgetService;
+    }
+
+    @KafkaListener(
+            topics = "transaction-events",
+            groupId = "budget-service-group"
+    )
+    public void consumeTransactionCreatedEvent(
+            TransactionCreatedEvent event) {
+
+        logger.info(
+                "Budget Service received transaction event: {}",
+                event
+        );
+
+        logger.info(
+                "Evaluating budget for userId={}, category={}, amount={}",
+                event.getUserId(),
+                event.getCategory(),
+                event.getAmount()
+        );
+
+        budgetService.processTransaction(
+                event.getUserId(),
+                event.getCategory(),
+                event.getAmount().doubleValue()
+        );
     }
 }
