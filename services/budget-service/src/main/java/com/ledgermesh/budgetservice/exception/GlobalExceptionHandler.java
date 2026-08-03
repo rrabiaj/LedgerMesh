@@ -21,6 +21,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
     }
 
+    @SuppressWarnings("null")
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ApiErrorDTO> handleValidation(MethodArgumentNotValidException ex, HttpServletRequest request) {
         String message = ex.getBindingResult().getFieldErrors().stream()
@@ -29,4 +30,11 @@ public class GlobalExceptionHandler {
         ApiErrorDTO error = new ApiErrorDTO(message, Instant.now(), HttpStatus.BAD_REQUEST.value(), request.getRequestURI());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
     }
+
+    @ExceptionHandler(BudgetAlreadyExistsException.class)
+    public ResponseEntity<ApiErrorDTO> handleAlreadyExists(BudgetAlreadyExistsException ex, HttpServletRequest request) {
+        ApiErrorDTO error = new ApiErrorDTO(ex.getMessage(), Instant.now(), HttpStatus.CONFLICT.value(), request.getRequestURI());
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(error);
+    }
+    
 }
