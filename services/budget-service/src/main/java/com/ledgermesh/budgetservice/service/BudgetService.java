@@ -104,7 +104,7 @@ public class BudgetService{
                 .previousSpentAmount(previousSpentAmount)
                 .currentSpentAmount(currentSpentAmount)
                 .remainingAmount(remainingAmount)
-                .exceeded(exceeded1)
+                .exceeded(exceeded)
                 .build();
     }
 
