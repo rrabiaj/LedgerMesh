@@ -12,6 +12,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.ledgermesh.budgetservice.dto.BudgetEvaluationRequestDTO;
 import com.ledgermesh.budgetservice.dto.BudgetEvaluationResponseDTO;
+import com.ledgermesh.budgetservice.event.BudgetExceededEvent;
+import com.ledgermesh.budgetservice.producer.BudgetEventProducer;
+import java.time.LocalDateTime;
 
 import java.math.BigDecimal;
 
@@ -25,6 +28,7 @@ public class BudgetService{
 
     private final BudgetRepository budgetRepository;
     private final BudgetMapper budgetMapper;
+    private final BudgetEventProducer budgetEventProducer;
 
     public BudgetResponseDTO createBudget(BudgetRequestDTO request){
 
@@ -95,6 +99,17 @@ public class BudgetService{
 
         BigDecimal remainingAmount = budget.getLimitAmount().subtract(updatedBudget.getSpentAmount());
         boolean exceeded = updatedBudget.getSpentAmount().compareTo(updatedBudget.getLimitAmount()) > 0;
+
+        if (exceeded) {
+            budgetEventProducer.sendBudgetExceededEvent(BudgetExceededEvent.builder()
+                    .budgetId(updatedBudget.getId())
+                    .userId(updatedBudget.getUserId())
+                    .category(updatedBudget.getCategory())
+                    .limitAmount(updatedBudget.getLimitAmount())
+                    .spentAmount(updatedBudget.getSpentAmount())
+                    .timestamp(LocalDateTime.now())
+                    .build());
+        }
 
         return BudgetEvaluationResponseDTO.builder()
                 .budgetId(updatedBudget.getId())

@@ -26,6 +26,7 @@ public class TransactionService {
     @Transactional
     public TransactionResponseDTO createTransaction(TransactionRequestDTO request) {
         Transaction transaction = transactionMapper.toEntity(request);
+        @SuppressWarnings("null")
         Transaction saved = transactionRepository.save(transaction);
         transactionEventProducer.sendTransactionCreatedEvent(transactionMapper.toEvent(saved));
         return transactionMapper.toResponse(saved);
@@ -33,6 +34,7 @@ public class TransactionService {
 
      @Transactional(readOnly = true)
     public TransactionResponseDTO getTransactionById(UUID id) {
+        @SuppressWarnings("null")
         Transaction transaction = transactionRepository.findById(id)
                 .orElseThrow(() -> new TransactionNotFoundException(id));
         return transactionMapper.toResponse(transaction);
