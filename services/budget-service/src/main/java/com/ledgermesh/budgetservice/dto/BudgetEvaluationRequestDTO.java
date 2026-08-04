@@ -18,7 +18,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 public class BudgetEvaluationRequestDTO {
-
+    
     @NotNull(message = "User ID is required")
     private UUID userId;
 
@@ -28,4 +28,5 @@ public class BudgetEvaluationRequestDTO {
     @NotNull(message = "amount is required")
     @Positive(message = "amount must be greater than zero")
     private BigDecimal amount;
+
 }
