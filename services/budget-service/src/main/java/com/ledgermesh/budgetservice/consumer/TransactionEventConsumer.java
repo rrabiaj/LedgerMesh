@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
+import com.ledgermesh.budgetservice.dto.BudgetEvaluationRequestDTO;
 
 @Component
 public class TransactionEventConsumer {
@@ -38,10 +39,12 @@ public class TransactionEventConsumer {
                 event.getAmount()
         );
 
-        budgetService.processTransaction(
-                event.getUserId(),
-                event.getCategory(),
-                event.getAmount().doubleValue()
-        );
+        budgetService.evaluateTransaction(
+        BudgetEvaluationRequestDTO.builder()
+                .userId(event.getUserId())
+                .category(event.getCategory())
+                .amount(event.getAmount())
+                .build()
+	);
     }
 }
